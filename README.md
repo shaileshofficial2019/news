@@ -1,7 +1,7 @@
 
 # News Website Using Node.js 
 
-##Check out Website:
+## Check out Website:
 https://news-app-node-js.herokuapp.com
 
 This is News Website Created using Node.js, express,ejs, nodemon, axios, dotenv and body-parser
