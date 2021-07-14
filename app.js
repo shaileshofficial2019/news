@@ -13,7 +13,18 @@ app.use(bodyParser.urlencoded({extended:true}))
 const PORT=process.env.PORT || 8080;
 
 app.get("/", function(req, res){
-    res.render('base',{title: "Home"});
+	apiKey = process.env.API;
+	var data='';
+	var url='https://newsapi.org/v2/everything?country=in&apiKey='+apiKey;
+var news =await axios.get(url).then((response)=>{
+		console.log(response.status);
+		data = response.data;
+		return data;
+	}).catch(err=>{
+		console.log(err)
+	})
+	// console.log(news);
+	res.render('index',{news:news.articles,title:"Home"});
 });
 
 app.get('/news',async (req,res)=>{
