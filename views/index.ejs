@@ -1,0 +1,29 @@
+<%-include('header') %>
+<%-include('nav') %>
+
+ <div style="display: flex;flex-wrap: wrap;">
+        <% if(news.length>0){
+                    for (var i=0 ; i<news.length ; i++){ %>
+                        <div class="card mx-3" style="width: 18rem;margin-top:20px;">
+                            <img src="<%= news[i].urlToImage%>" class="card-img-top" alt="<%= news[i].title%>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= news[i].title%></h5>
+                                <p class="card-text"><%= news[i].description%></p>
+                                <a target="_blank" href="<%= news[i].url%>" class="btn btn-primary"> Read Article</a>
+                            </div>
+                        </div>
+                <%}}else{%>
+<div class="container w-50 my-3" style="justify-content: center;align-items: center;height: 75vh;">
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong><h4 class="alert-heading"><i class="fa fa-warning"></i> Warning!</h4></strong>Please enter a valid Query No Search Result Found On This Query : "<%=title %>"
+        <hr>
+        <P>Please Try with new query</P>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button id="tryagain" class="btn btn-primary">
+              Try Again</button>
+    </div>
+</div>
+            <%}%>
+        </div>
+<%-include('footer')%>
