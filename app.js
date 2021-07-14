@@ -15,7 +15,7 @@ const PORT=process.env.PORT || 8080;
 app.get("/", function(req, res){
 	apiKey = process.env.API;
 	var data='';
-	var url='https://newsapi.org/v2/everything?country=in&apiKey='+apiKey;
+	var url='https://newsapi.org/v2/everything?q=India&apiKey='+apiKey;
 var news =await axios.get(url).then((response)=>{
 		console.log(response.status);
 		data = response.data;
