@@ -12,7 +12,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}))
 const PORT=process.env.PORT || 8080;
 
-app.get("/", function(req, res){
+app.get("/", async (req, res)=>{
 	apiKey = process.env.API;
 	var data='';
 	var url='https://newsapi.org/v2/everything?q=India&apiKey='+apiKey;
