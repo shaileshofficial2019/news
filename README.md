@@ -1,5 +1,5 @@
 
-# News Website Using Node.js 
+# News Website Using Node.js and NewsApi
 
 ## Check out Website:
 https://news-app-node-js.herokuapp.com
